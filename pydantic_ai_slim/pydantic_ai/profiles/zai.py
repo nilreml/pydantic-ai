@@ -11,5 +11,7 @@ def zai_model_profile(model_name: str) -> ModelProfile | None:
     return ModelProfile(
         supports_json_schema_output='glm-4.5v' not in model_name,
         # NOTE: glm-4-32b and glm-4.6(non-v) require schema instructions, 4.5, 4.5-air, 4.6v and 4.7 don't
-        native_output_requires_schema_in_instructions=model_name.endswith(('glm-4-32b', 'glm-4.6')),
+        # native_output_requires_schema_in_instructions=model_name.endswith(('glm-4-32b', 'glm-4.6')),
+        native_output_requires_schema_in_instructions=True,
     )
+    # return None
